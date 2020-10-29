@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--开启spring mvc 注解扫描 只需要扫描controller层 ,避免重复扫描报错-->
+    <context:component-scan base-package="com.clever.chen.springmvc.controller"/>
+    <!--配置转换为json数据的驱动类,将发送给前端的数据转换为json字符串-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--前后端不分离-->
+    <!--告诉Spring mvc 不要拦截静态资源,
+    告诉mvc使用自己默认的servlet去处理请求-->
+    <mvc:default-servlet-handler/>
+    <!--视图解析器  jsp页面需要通过解析渲染才能转化为html代码传到前端-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

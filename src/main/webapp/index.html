@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--bootstrap封装的css样式库-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <!--bootstrap封装的js插件-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.js"></script>
+    <!--JQuery插件-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <!--验证规则样式  css-->
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css"
+          rel="stylesheet">
+    <!--核心验证文件  js-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <!--中文校验-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/language/zh_CN.js"></script>
+    <script>
+        let user = {
+            username:"admin",
+            age: 10,
+            adresses:[
+                {
+                    id:1,
+                    city:"深圳"
+                },
+                {
+                    id:2,
+                    city:"广州"
+                },
+                {
+                    id:3,
+                    city:"上海"
+                }
+
+            ]
+        }
+        /*前端解析js对象为json字符串*/
+        console.log(JSON.stringify(user))
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
